@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Template Testing</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<style>
+
+  body, html {
+    height: 100%;
+    width: 100%
+    margin: 0;
+    overflow-x: hidden; 
+  }
+
+  .bg { 
+      background-image: url("girl_looking_right.jpg");
+      width: 100vw;
+      height: 100vh;
+      min-height: 800px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  .header {min-height: 120px; background-color: rgba(18, 44, 86, 0.9); position: relative;}
+
+  .logo {position: absolute; top: 50%; transform: translateY(-50%); max-width: 100%; height: auto;}
+
+  #maincontent {height: calc(100vh - 120px); background-color: rgba(0, 0, 0, 0.3); min-width: 620px; min-height: 680px;}
+
+  /*form {width:60%; margin:auto;}*/
+  form {width:60%;}
+
+  /*.formspace {padding-top:30%;}*/
+
+  .formspace {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  h1 {font-weight: 700; line-height: .95em; text-align: center;margin-bottom: 30px;}
+
+  .btn {font-weight: 600 !important;}
+
+
+  @media only screen and (max-width: 1240px) {
+    .bg {
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("girl_looking_right.jpg");
+    }
+    #maincontent {
+       width: 100%;
+       background-color: transparent;
+    }
+    .formspace {
+      padding-top: 10%;
+      color: #ddd;
+
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: translate(0%,0%);
+      margin: 0 auto;
+    }
+
+    .formspace h1 {
+      font-size: 35px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    /*#maincontent {
+      background-color: rgba(0, 0, 0, 0.5);
+    }*/
+
+    .formspace {
+      padding-top: 15%;
+    }
+
+    .header {
+      min-height: 0;
+    }
+
+    .header-center {
+      min-height: 120px;
+    }
+    .header-center img {
+      margin-left: 15%;
+    }
+
+  }
+</style> 
+</head>
+
+<body>
+<div class="bg">
+
+  <div class="row">
+
+    <div class="col-sm-0 col-md-2 header">
+      
+    </div>
+
+    <div class="col-sm-12 col-md-8 header header-center">
+      <img class="logo" src="logo2016x450.png">
+    </div>
+
+    <div class="col-sm-0 col-md-2 header">
+      
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div id="maincontent" class="col-md-4 offset-md-6">
+
+     <form class="formspace">
+
+      <h1>What's The Single Biggest Question You Have About Generating More Leads?</h1>
+
+      <div class="form-group">
+        <label for="exampleInputText">YourName:</label>
+        <input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Your Name">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email Address:</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter Your Question:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-warning btn-block">Here's My Question &raquo;</button>
+
+    </form>
+
+  </div> 
+  </div>
+
+   
+</div>
+
+<script>
+  $(window).on('load resize', function mobileViewUpdate() {
+      var viewportWidth = $(window).width();
+      if (viewportWidth < 1240) {
+          $("#maincontent").removeClass("col-md-4 offset-md-6");
+      }
+      if (viewportWidth > 1240) {
+        $("#maincontent").addClass("col-md-4 offset-md-6");
+      }
+  });
+</script>
+</body>
+</html>
