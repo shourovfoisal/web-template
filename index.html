@@ -28,9 +28,20 @@
 
   .header {min-height: 120px; background-color: rgba(18, 44, 86, 0.9); position: relative;}
 
-  .logo {position: absolute; top: 50%; transform: translateY(-50%); max-width: 100%; height: auto;}
+  /*.logo {position: absolute; top: 50%; transform: translateY(-50%); max-width: 100%; height: auto;}*/
 
-  #maincontent {height: calc(100vh - 120px); background-color: rgba(0, 0, 0, 0.3); min-width: 620px; min-height: 680px;}
+  .logo-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-container img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #maincontent {height: calc(100vh - 120px); background-color: rgba(0, 0, 0, 0.3); min-height: 680px;}
 
   /*form {width:60%; margin:auto;}*/
   form {width:60%;}
@@ -44,7 +55,7 @@
     transform: translate(-50%,-50%);
   }
 
-  h1 {font-weight: 700; line-height: .95em; text-align: center;margin-bottom: 30px;}
+  .formspace h1 {font-weight: 700; line-height: 115%; text-align: center; margin-bottom: 30px;}
 
   .btn {font-weight: 600 !important;}
 
@@ -53,6 +64,12 @@
     .bg {
       background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("girl_looking_right.jpg");
     }
+
+    .logo-container {
+      width: 100%;
+      text-align: center;
+    }
+
     #maincontent {
        width: 100%;
        background-color: transparent;
@@ -75,10 +92,6 @@
 
   @media only screen and (max-width: 768px) {
 
-    /*#maincontent {
-      background-color: rgba(0, 0, 0, 0.5);
-    }*/
-
     .formspace {
       padding-top: 15%;
     }
@@ -90,10 +103,27 @@
     .header-center {
       min-height: 120px;
     }
-    .header-center img {
-      margin-left: 15%;
+
+    .formspace h1 {
+      font-size: 30px;
     }
 
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    .formspace {
+      padding-top: 20%;
+    }
+
+    .formspace h1 {
+      font-size: 25px;
+      line-height: 110%;
+    }
+
+    .logo-container img {
+      width: 85%;
+    }
   }
 </style> 
 </head>
@@ -108,7 +138,9 @@
     </div>
 
     <div class="col-sm-12 col-md-8 header header-center">
-      <img class="logo" src="logo2016x450.png">
+      <div class="logo-container">
+        <img class="logo" src="logo2016x450.png">
+      </div>
     </div>
 
     <div class="col-sm-0 col-md-2 header">
